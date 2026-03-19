@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALL STARS 2026 — How It Works</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0a1628;--card:#0f1f3d;--card2:#142952;--accent:#f0c040;--accent2:#e8a020;
+--green:#2ecc71;--blue:#4a90e2;--red:#e74c3c;--orange:#f39c12;--purple:#9b59b6;--cyan:#00d2d3;
+--text:#e8ecf1;--text2:#7b9cc4;--border:#1a3a6a;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;scroll-behavior:smooth}
+::selection{background:var(--accent);color:var(--bg)}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,22,40,0.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);display:flex;align-items:center;height:56px;padding:0 24px;gap:16px}
+nav .logo{font-weight:900;font-size:16px;color:var(--accent);letter-spacing:1px;white-space:nowrap}
+nav .logo span{color:var(--text);font-weight:600}
+nav .links{display:flex;gap:2px;overflow-x:auto;flex:1}
+nav .links a{color:var(--text2);text-decoration:none;font-size:11px;font-weight:600;padding:7px 14px;border-radius:8px;white-space:nowrap;transition:all .2s;letter-spacing:.3px}
+nav .links a:hover,nav .links a.active{color:var(--accent);background:rgba(240,192,64,0.1)}
+.pbar{position:fixed;top:56px;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--green),var(--cyan),var(--purple));z-index:1001;transition:width .1s}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 24px 60px;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 20%,rgba(240,192,64,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(74,144,226,0.06) 0%,transparent 45%)}
+.badge{display:inline-block;background:rgba(240,192,64,0.12);color:var(--accent);padding:6px 18px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(240,192,64,0.25)}
+.hero h1{font-size:clamp(44px,8vw,90px);font-weight:900;line-height:.95;margin:24px 0 16px;background:linear-gradient(135deg,#fff 20%,var(--accent) 60%,var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{font-size:clamp(15px,2vw,20px);color:var(--text2);max-width:660px;line-height:1.7}
+.hero-stats{display:flex;gap:48px;margin-top:48px;flex-wrap:wrap;justify-content:center}
+.hero-stats .s{text-align:center}
+.hero-stats .s .n{font-size:44px;font-weight:900;color:var(--accent);line-height:1}
+.hero-stats .s .l{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:1.5px;margin-top:6px}
+
+.sec{padding:80px 24px;max-width:1100px;margin:0 auto}
+.sec .sb{display:inline-block;background:rgba(240,192,64,0.1);color:var(--accent);padding:5px 14px;border-radius:10px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.sec h2{font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.15;margin-bottom:8px}
+.sec .sd{color:var(--text2);font-size:15px;max-width:660px;line-height:1.7;margin-bottom:36px}
+
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.c{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;transition:all .3s;position:relative;overflow:hidden}
+.c:hover{transform:translateY(-3px);border-color:rgba(240,192,64,0.3);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+.c .ic{font-size:28px;margin-bottom:12px;display:block}
+.c h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.c p{color:var(--text2);font-size:13px;line-height:1.6}
+
+.ph{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:30px;position:relative;overflow:hidden}
+.ph::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.ph.p1::before{background:linear-gradient(90deg,var(--blue),var(--cyan))}
+.ph.p2::before{background:linear-gradient(90deg,var(--accent),var(--orange))}
+.ph.p3::before{background:linear-gradient(90deg,var(--red),var(--purple))}
+.ph .big{font-size:72px;font-weight:900;opacity:.06;position:absolute;top:4px;right:16px;line-height:1}
+.ph h3{font-size:20px;font-weight:800}
+.ph .ps{color:var(--accent);font-size:12px;font-weight:700;margin:2px 0 4px;letter-spacing:.5px}
+.ph .pd{color:var(--text2);font-size:12px;font-weight:600;margin-bottom:14px;display:inline-block;background:var(--card2);padding:3px 10px;border-radius:6px}
+.ph p{color:var(--text2);font-size:13px;line-height:1.7}
+.ph strong{color:var(--text)}
+
+.flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:32px 0;font-size:12px;font-weight:700}
+.flow .fs{background:var(--card);border:1px solid var(--border);padding:10px 16px;border-radius:10px;white-space:nowrap}
+.flow .fs.hl{border-color:var(--accent);color:var(--accent)}
+.flow .fa{color:var(--accent);font-size:16px}
+
+.tl{position:relative;padding:10px 0 10px 36px;margin:20px 0}
+.tl::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),var(--blue),var(--purple),var(--green))}
+.tl-i{margin-bottom:20px;position:relative}
+.tl-i::before{content:'';position:absolute;left:-29px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--bg)}
+.tl-i .td{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.5px}
+.tl-i .tt{font-size:14px;font-weight:700;margin-top:2px}
+.tl-i .tx{font-size:12px;color:var(--text2);margin-top:2px}
+
+.tw{overflow-x:auto;border-radius:12px;border:1px solid var(--border);margin:16px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead{background:var(--card2)}
+th{padding:12px 14px;text-align:left;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--accent);border-bottom:2px solid var(--border)}
+td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text2)}
+tr:last-child td{border-bottom:none}
+
+.mc{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:18px;margin:10px 0}
+.mc h4{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px}
+.mc .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tag{padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.t-b2b{background:rgba(74,144,226,0.15);color:var(--blue)}
+.t-sc{background:rgba(243,156,18,0.15);color:var(--orange)}
+.t-mh{background:rgba(46,204,113,0.15);color:var(--green)}
+.t-eng{background:rgba(155,89,182,0.15);color:var(--purple)}
+.mc .mx{font-size:18px;font-weight:900;color:var(--accent)}
+
+.br{display:flex;align-items:center;gap:14px;padding:12px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px;margin:7px 0}
+.br .bi{font-size:22px;flex-shrink:0}
+.br .bl{flex:1;font-weight:600;font-size:13px}
+.br .bp{font-size:20px;font-weight:900;color:var(--accent)}
+
+.cb{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.cb-ar{background:rgba(74,144,226,0.15);color:var(--blue)}
+.cb-ma{background:rgba(46,204,113,0.15);color:var(--green)}
+.cb-mh{background:rgba(243,156,18,0.15);color:var(--orange)}
+.cb-au{background:rgba(155,89,182,0.15);color:var(--purple)}
+
+details{background:var(--card);border:1px solid var(--border);border-radius:12px;margin:10px 0;overflow:hidden}
+details summary{padding:14px 18px;cursor:pointer;font-weight:700;font-size:13px;list-style:none;display:flex;justify-content:space-between;align-items:center;user-select:none}
+details summary::after{content:'▸';font-size:14px;transition:transform .2s;color:var(--accent)}
+details[open] summary::after{transform:rotate(90deg)}
+details .db{padding:0 18px 18px;font-size:13px;color:var(--text2);line-height:1.7}
+details .db ul{padding-left:18px;margin:6px 0}
+details .db li{margin:5px 0}
+details .db h4{color:var(--text);margin:14px 0 6px;font-size:13px}
+details .db h4:first-child{margin-top:0}
+
+/* SCORING TIER TABLE */
+.tier{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(26,58,106,0.4);font-size:12px}
+.tier:last-child{border-bottom:none}
+.tier .tv{font-weight:700;color:var(--accent);min-width:55px}
+.tier .tl2{color:var(--text2)}
+.tier-header{font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;margin:12px 0 6px;padding-top:8px;border-top:1px solid var(--border)}
+.tier-header:first-child{border-top:none;margin-top:0;padding-top:0}
+
+/* SCORE BAR */
+.sbar{margin:12px 0}
+.sbar .sbar-h{display:flex;justify-content:space-between;margin-bottom:5px;font-size:12px}
+.sbar .sbar-l{font-weight:600;color:var(--text)}
+.sbar .sbar-v{font-weight:800;color:var(--accent)}
+.sbar .sbar-t{height:8px;background:var(--card2);border-radius:4px;overflow:hidden}
+.sbar .sbar-f{height:100%;border-radius:4px;transition:width 1.5s ease-out}
+
+.bk-wrap{overflow-x:auto;padding:16px 0}
+.bk{display:flex;gap:24px;min-width:820px;align-items:center}
+.bk-r{display:flex;flex-direction:column;gap:10px;min-width:140px}
+.bk-r .rt{font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;text-align:center;margin-bottom:6px}
+.bk-m{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:11px;text-align:center;font-weight:600}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:60px 0}
+
+.callout{background:rgba(240,192,64,0.06);border:1px solid rgba(240,192,64,0.2);border-radius:12px;padding:20px 24px;margin:20px 0;font-size:13px;line-height:1.7}
+.callout strong{color:var(--accent)}
+.callout.info{background:rgba(74,144,226,0.06);border-color:rgba(74,144,226,0.2)}
+.callout.info strong{color:var(--blue)}
+.callout.warn{background:rgba(231,76,60,0.06);border-color:rgba(231,76,60,0.2)}
+.callout.warn strong{color:var(--red)}
+
+.ei{display:flex;gap:10px;align-items:center;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin:6px 0;font-size:12px}
+.ei .er{color:var(--accent);font-weight:700;min-width:44px;font-size:11px}
+.ei .ea{font-weight:600}
+.ei .ed{color:var(--text2);margin-left:auto;font-size:11px}
+
+.ex{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:20px;margin:16px 0}
+.ex h4{font-size:13px;font-weight:700;margin-bottom:12px;color:var(--accent)}
+.ex .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ex .box{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px}
+.ex .box .name{font-weight:700;font-size:14px;margin-bottom:6px}
+.ex .box .line{font-size:12px;color:var(--text2);margin:3px 0}
+.ex .box .total{font-size:16px;font-weight:800;margin-top:8px}
+
+footer{text-align:center;padding:50px 24px;color:var(--text2);font-size:11px;border-top:1px solid var(--border);margin-top:30px}
+
+.fu{opacity:0;transform:translateY(24px);transition:all .5s ease-out}
+.fu.v{opacity:1;transform:translateY(0)}
+
+@media(max-width:700px){
+.sec{padding:50px 16px}
+.hero{padding:70px 16px 40px}
+.hero-stats{gap:24px}
+.hero-stats .s .n{font-size:32px}
+.ex .row{grid-template-columns:1fr}
+}
+@media print{
+nav,.pbar,#viz-controls{display:none!important}
+body{background:#fff;color:#222}
+.c,.ph,details,.mc,.br,.ei,.ex,.ex .box,.callout{background:#f8f8f8;border-color:#ddd;color:#222}
+.c p,.ph p,td,.sd,.tx,.db,.ed,.ex .box .line{color:#555}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">⭐ ALL <span>STARS 2026</span></div>
+<div class="links">
+<a href="#top" class="active">Intro</a>
+<a href="#what">What Is It?</a>
+<a href="#categories">Categories</a>
+<a href="#phases">3 Phases</a>
+<a href="#seeding">Seeding</a>
+<a href="#groups">Groups</a>
+<a href="#knockout">Knockout</a>
+<a href="#wc-scoring">WC Scoring</a>
+<a href="#scoring">Full Scoring</a>
+<a href="#bonus">Bonus Pts</a>
+</div>
+</nav>
+<div class="pbar" id="pbar" style="width: 0%;"></div>
+
+<!-- HERO -->
+<div class="hero" id="top">
+<div class="badge">Season 2026 — How It Works</div>
+<h1>ALL STARS</h1>
+<p class="sub">The operational excellence league for EU ATS Ops. Football-inspired format. Real competition. This year featuring a <strong style="color:var(--accent)">cross-category World Cup</strong> aligned with FIFA 2026.</p>
+<div class="hero-stats">
+<div class="s"><div class="n">27</div><div class="l">Sites</div></div>
+<div class="s"><div class="n">4</div><div class="l">Categories</div></div>
+<div class="s"><div class="n">3</div><div class="l">Phases</div></div>
+<div class="s"><div class="n">1,000</div><div class="l">Max Points</div></div>
+</div>
+</div>
+
+<!-- WHAT IS ALL STARS -->
+<div class="sec" id="what">
+<div class="sb">Foundations</div>
+<h2>What Is ALL STARS?</h2>
+<p class="sd">A comprehensive operational excellence initiative combining standardized work frameworks, productivity audits and targeted improvement plans — all within a competitive, football-inspired structure.</p>
+
+<div class="g3 fu">
+<div class="c" style="border-top:3px solid var(--accent)"><div class="ic">🎯</div><h3>DEFINE</h3><p>Standard work framework for UTR L3+ roles suitable for operational day-to-day realities</p></div>
+<div class="c" style="border-top:3px solid var(--blue)"><div class="ic">🔒</div><h3>CONTROL</h3><p>Operational routines improved through task optimization and gatekeeping mechanisms</p></div>
+<div class="c" style="border-top:3px solid var(--green)"><div class="ic">🚀</div><h3>DRIVE</h3><p>Operational excellence through targeted standard work audits and Back to Basics action plans</p></div>
+</div>
+
+<div class="callout fu" style="margin-top:24px">
+<strong>🏆 Mission:</strong> Strengthen standardization across the EU ATS Ops network by implementing unified work practices and driving continuous improvement — becoming the benchmark for operational excellence where standardized practices enable innovation and enhance efficiency.
+</div>
+
+<h3 style="margin:30px 0 14px;font-size:16px" class="fu">📊 The 4 Scoring Pillars — 1,000 Points Total</h3>
+<div class="g4 fu">
+<div class="c" style="text-align:center;padding:20px"><div style="font-size:24px">📦</div><div style="font-size:11px;color:var(--text2);margin:6px 0">Ops Excellence</div><div style="font-size:22px;font-weight:900;color:var(--accent)">450<span style="font-size:12px;color:var(--text2)"> pts</span></div><div style="font-size:10px;color:var(--text2)">45%</div></div>
+<div class="c" style="text-align:center;padding:20px"><div style="font-size:24px">🤖</div><div style="font-size:11px;color:var(--text2);margin:6px 0">AI Adoption</div><div style="font-size:22px;font-weight:900;color:var(--blue)">200<span style="font-size:12px;color:var(--text2)"> pts</span></div><div style="font-size:10px;color:var(--text2)">20%</div></div>
+<div class="c" style="text-align:center;padding:20px"><div style="font-size:24px">⚽</div><div style="font-size:11px;color:var(--text2);margin:6px 0">Engagement</div><div style="font-size:22px;font-weight:900;color:var(--green)">200<span style="font-size:12px;color:var(--text2)"> pts</span></div><div style="font-size:10px;color:var(--text2)">20%</div></div>
+<div class="c" style="text-align:center;padding:20px"><div style="font-size:24px">📊</div><div style="font-size:11px;color:var(--text2);margin:6px 0">Performance</div><div style="font-size:22px;font-weight:900;color:var(--orange)">150<span style="font-size:12px;color:var(--text2)"> pts</span></div><div style="font-size:10px;color:var(--text2)">15%</div></div>
+</div>
+<p class="fu" style="color:var(--text2);font-size:12px;margin-top:14px">Points are accumulated throughout the whole season with monthly assessments. Participation in all components is essential for maximum point potential.</p>
+</div>
+
+<!-- CATEGORIES -->
+<div class="sec" id="categories">
+<div class="sb">Competition</div>
+<h2>4 Categories — 27 Sites</h2>
+<p class="sd">Sites are grouped by operational model, ensuring fair competition among peers with similar infrastructure and processes. One champion per category.</p>
+
+<div class="g4 fu">
+<div class="c" style="border-top:3px solid var(--blue)"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><span class="cb cb-ar">🤖 AR</span><span style="font-size:26px;font-weight:900;color:var(--blue)">5</span></div><p style="font-size:12px"><strong style="color:var(--text)">Amazon Robotics</strong> — Advanced automation and robotics technology</p><div style="margin-top:8px;font-size:10px;color:var(--text2);line-height:1.8">BHX8 · BLQ8 · DTM9 · LBA8 · STN8</div></div>
+<div class="c" style="border-top:3px solid var(--green)"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><span class="cb cb-ma">📦 Manual/AMXL</span><span style="font-size:26px;font-weight:900;color:var(--green)">8</span></div><p style="font-size:12px"><strong style="color:var(--text)">Manual &amp; Extra Large</strong> — Manual processes and specialized oversized handling</p><div style="margin-top:8px;font-size:10px;color:var(--text2);line-height:1.8">CDG8 · KSF7 · LBA9 · LEJ7 · MUC7 · SBS2 · SNG1 · SXW2</div></div>
+<div class="c" style="border-top:3px solid var(--orange)"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><span class="cb cb-mh">🏗️ MHE</span><span style="font-size:26px;font-weight:900;color:var(--orange)">5</span></div><p style="font-size:12px"><strong style="color:var(--text)">Material Handling Equipment</strong> — Specialized machinery for inventory management</p><div style="margin-top:8px;font-size:10px;color:var(--text2);line-height:1.8">DTM8 · FRAX · LYS8 · MAD8 · NUE9</div></div>
+<div class="c" style="border-top:3px solid var(--purple)"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><span class="cb cb-au">⚙️ Auto</span><span style="font-size:26px;font-weight:900;color:var(--purple)">9</span></div><p style="font-size:12px"><strong style="color:var(--text)">Automated</strong> — Advanced conveyor systems and sortation technology</p><div style="margin-top:8px;font-size:10px;color:var(--text2);line-height:1.8">BCN8 · BER8 · FCO8 · HAJ8 · LCY8 · LIL8 · LIN8 · MAN8 · ORY8</div></div>
+</div>
+
+<div class="g4 fu" style="margin-top:16px">
+<div class="c" style="text-align:center;padding:16px"><div style="font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:1px">Same Rules</div><div style="font-size:13px;font-weight:700;margin-top:5px">Identical scoring for all</div></div>
+<div class="c" style="text-align:center;padding:16px"><div style="font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:1px">SPE Adjustment</div><div style="font-size:13px;font-weight:700;margin-top:5px">Multiplier for SPE coverage gaps</div></div>
+<div class="c" style="text-align:center;padding:16px"><div style="font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:1px">Fair Play</div><div style="font-size:13px;font-weight:700;margin-top:5px">Compete against similar peers</div></div>
+<div class="c" style="text-align:center;padding:16px"><div style="font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:1px">Champions</div><div style="font-size:13px;font-weight:700;margin-top:5px">One winner per category</div></div>
+</div>
+
+<details class="fu" style="margin-top:14px">
+<summary>⚖️ SPE Coverage Adjustment — How It Works</summary>
+<div class="db">
+<p>A multiplier is applied <strong>only to SPE-dependent topics</strong> (e.g. Kaizen Events) to account for reduced SPE headcount or late starts. Topics completable by Ops alone or with remote SPE support (e.g. AI, Scorecard, Best Practices, B2B) are <strong>not adjusted</strong>.</p>
+<ul>
+<li><strong>×1.3</strong> — Double coverage (SPE shared from another site)</li>
+<li><strong>×1.5</strong> — Late hire (SPE onboarded mid-year)</li>
+<li><strong>×2.0</strong> — No dedicated SPE (remote support only)</li>
+</ul>
+<p style="margin-top:8px"><em>Example: Site with no dedicated SPE earns 40 pts in Kaizen Events → Adjusted = 40 × 2.0 = 80 pts. Same site earns 80 pts in AI → stays 80 pts (not SPE-dependent).</em></p>
+</div>
+</details>
+</div>
+
+<div class="divider"></div>
+
+<!-- 3 PHASES -->
+<div class="sec" id="phases">
+<div class="sb">2026 Format</div>
+<h2>The Season in 3 Phases</h2>
+<p class="sd">New for 2026: the league combines with a <strong style="color:var(--accent)">cross-category World Cup</strong> aligned with FIFA 2026. Your league performance sets the stage. The tournament rewrites the standings.</p>
+
+<div class="flow fu">
+<div class="fs">LEAGUE</div><div class="fa">→</div><div class="fs">SEEDING</div><div class="fa">→</div><div class="fs">THE DRAW</div><div class="fa">→</div><div class="fs">WORLD CUP</div><div class="fa">→</div><div class="fs">BONUS PTS</div><div class="fa">→</div><div class="fs hl">🏆 CHAMPION</div>
+</div>
+
+<div class="g3 fu" style="margin-top:24px">
+<div class="ph p1"><div class="big">1</div><h3>⚽ THE LEAGUE</h3><div class="ps">"The Qualification"</div><div class="pd">March — May</div><p>Compete <strong>within your category</strong>. Accumulate points through the standard scoring system across Ops Excellence, AI Adoption, Performance, and Engagement.</p><p style="margin-top:10px"><strong>🔑 Key:</strong> Your league ranking determines your <strong>World Cup seed</strong>. The higher you finish, the more favourable your draw.</p></div>
+<div class="ph p2"><div class="big">2</div><h3>🏆 WORLD CUP</h3><div class="ps">"The Tournament"</div><div class="pd">June — August</div><p>The league pauses. The <strong>cross-category</strong> tournament begins: sites from different categories face each other head-to-head.</p><p style="margin-top:10px"><strong>Format:</strong> 8 groups → Round of 16 → Quarters → Semis → <strong>Grand Final</strong>. Each "match" = 2 weeks of real operational metrics compared directly.</p></div>
+<div class="ph p3"><div class="big">3</div><h3>🔥 THE FINAL PUSH</h3><div class="ps">"League Phase 2"</div><div class="pd">September — October</div><p>The league resumes with <strong>World Cup bonus points</strong> added to the standings. A deep World Cup run can completely reshape the league table.</p><p style="margin-top:10px"><strong>🏅 Result:</strong> One champion per category crowned in October.</p></div>
+</div>
+
+<h3 style="margin:40px 0 16px;font-size:17px" class="fu">📅 Full Season Timeline</h3>
+<div class="tl fu">
+<div class="tl-i"><div class="td">WK9 — February</div><div class="tt">League Kick-off — Capstone Event</div></div>
+<div class="tl-i"><div class="td">WK12 — March</div><div class="tt">Site Launch — Game On!</div><div class="tx">Phase 1 begins: compete within your category</div></div>
+<div class="tl-i"><div class="td">May</div><div class="tt">Phase 1 ends — Seeds confirmed</div><div class="tx">THE DRAW: World Cup group assignments revealed</div></div>
+<div class="tl-i"><div class="td">June</div><div class="tt">Phase 2 — World Cup Group Stage</div><div class="tx">Matchdays 1 &amp; 2 (2 weeks each)</div></div>
+<div class="tl-i"><div class="td">July</div><div class="tt">Matchday 3 + Round of 16 + Quarter-Finals</div></div>
+<div class="tl-i"><div class="td">August</div><div class="tt">Semi-Finals &amp; GRAND FINAL</div><div class="tx">World Cup Champion crowned</div></div>
+<div class="tl-i"><div class="td">September</div><div class="tt">Phase 3 — League resumes</div><div class="tx">World Cup bonus points applied to standings</div></div>
+<div class="tl-i"><div class="td">WK44 — October</div><div class="tt">Season End — CATEGORY CHAMPIONS CROWNED</div></div>
+<div class="tl-i"><div class="td">WK45 — November</div><div class="tt">Virtual Gala — Awards Ceremony</div></div>
+</div>
+
+<div class="callout info fu"><strong>📌 World Cup Qualification:</strong> Minimum 100 points by the end of Phase 1. It's a low bar — if you've been actively participating, you're in.</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SEEDING & DRAW -->
+<div class="sec" id="seeding">
+<div class="sb">World Cup</div>
+<h2>Seeding &amp; The Draw</h2>
+<p class="sd">Your league performance determines which Pot you land in. The Pots determine your draw. The draw determines who you face. <strong style="color:var(--accent)">Every league point matters.</strong></p>
+
+<h3 style="margin-bottom:14px;font-size:16px" class="fu">🏺 How Pots Are Formed</h3>
+<p class="fu" style="color:var(--text2);font-size:13px;margin-bottom:16px">At the end of Phase 1, each category's sites are ranked by league points. The top 2 from each category go into Pot 1, the next 2 into Pot 2, and everyone else into Pot 3.</p>
+
+<div class="g3 fu">
+<div class="c" style="text-align:center;border-top:3px solid gold"><div style="font-size:32px">🥇</div><h3>Pot 1 — 8 teams</h3><p>#1 and #2 from each of the 4 categories<br><strong style="color:var(--text)">Most favourable draw positions</strong></p></div>
+<div class="c" style="text-align:center;border-top:3px solid silver"><div style="font-size:32px">🥈</div><h3>Pot 2 — 8 teams</h3><p>#3 and #4 from each category<br>Solid mid-table performers</p></div>
+<div class="c" style="text-align:center;border-top:3px solid #cd7f32"><div style="font-size:32px">🥉</div><h3>Pot 3 — 11 teams</h3><p>All remaining qualified sites<br>Larger categories contribute more here</p></div>
+</div>
+
+<div class="tw fu" style="margin-top:16px">
+<table>
+<thead><tr><th>Category</th><th>Total</th><th>Pot 1 🥇</th><th>Pot 2 🥈</th><th>Pot 3 🥉</th></tr></thead>
+<tbody>
+<tr><td><span class="cb cb-ar">AR</span></td><td>5</td><td>2</td><td>2</td><td>1</td></tr>
+<tr><td><span class="cb cb-ma">Manual/AMXL</span></td><td>8</td><td>2</td><td>2</td><td>4</td></tr>
+<tr><td><span class="cb cb-mh">MHE</span></td><td>5</td><td>2</td><td>2</td><td>1</td></tr>
+<tr><td><span class="cb cb-au">Auto</span></td><td>9</td><td>2</td><td>2</td><td>5</td></tr>
+<tr style="font-weight:700;color:var(--text)"><td>Total</td><td>27</td><td>8</td><td>8</td><td>11</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3 style="margin:30px 0 14px;font-size:16px" class="fu">🎲 Draw Rules</h3>
+<div class="g3 fu">
+<div class="c"><div class="ic">🛡️</div><h3>Category Protection</h3><p>No group may contain two sites from the same category — every group is cross-category by design.</p></div>
+<div class="c"><div class="ic">⚖️</div><h3>Pot Balance</h3><p>Each group gets one team from Pot 1, one from Pot 2, and (where applicable) one from Pot 3.</p></div>
+<div class="c"><div class="ic">🌟</div><h3>Seed Advantage</h3><p>Pot 1 teams are placed first and anchored — the two highest overall seeds cannot meet before the Final.</p></div>
+</div>
+
+<div class="callout fu" style="margin-top:16px"><strong>🎲 The Draw Show:</strong> The draw will be conducted at the end of May through an interactive animated experience — a digital ceremony that reveals each team's group assignment one by one, building suspense with every click.</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- GROUP STAGE -->
+<div class="sec" id="groups">
+<div class="sb">Phase 2</div>
+<h2>Group Stage</h2>
+<p class="sd">8 groups. 3 matchdays. 6 weeks. Every site in your group scores during the same 2-week window. Highest score wins the matchday.</p>
+
+<div class="g2 fu">
+<div class="c" style="text-align:center"><div style="font-size:44px;font-weight:900;color:var(--accent)">3</div><h3>Groups of 4</h3><p>Groups A, B, C<br>Pot 1 + Pot 2 + 2× Pot 3</p></div>
+<div class="c" style="text-align:center"><div style="font-size:44px;font-weight:900;color:var(--blue)">5</div><h3>Groups of 3</h3><p>Groups D, E, F, G, H<br>Pot 1 + Pot 2 + Pot 3</p></div>
+</div>
+
+<div class="callout info fu" style="margin-top:16px"><strong>💡 How does a "match" work?</strong> During a 2-week window, all sites in a group operate normally — pursuing B2B targets, completing Kaizens, driving AI adoption, hitting scorecard metrics. At the end of the window, points are calculated using the World Cup scoring system and sites within the group are ranked. It's a direct comparison of real operational performance measured over the same timeframe.</div>
+
+<h3 style="margin:28px 0 12px;font-size:16px" class="fu">📅 Group Stage Schedule</h3>
+<div class="g3 fu">
+<div class="c" style="text-align:center"><div style="color:var(--accent);font-weight:700;font-size:11px">MATCHDAY 1</div><div style="font-size:18px;font-weight:800;margin:6px 0">1 – 15 Jun</div><div style="font-size:11px;color:var(--text2)">2 weeks</div></div>
+<div class="c" style="text-align:center"><div style="color:var(--accent);font-weight:700;font-size:11px">MATCHDAY 2</div><div style="font-size:18px;font-weight:800;margin:6px 0">16 – 30 Jun</div><div style="font-size:11px;color:var(--text2)">2 weeks</div></div>
+<div class="c" style="text-align:center"><div style="color:var(--accent);font-weight:700;font-size:11px">MATCHDAY 3</div><div style="font-size:18px;font-weight:800;margin:6px 0">1 – 15 Jul</div><div style="font-size:11px;color:var(--text2)">2 weeks</div></div>
+</div>
+
+<h3 style="margin:28px 0 12px;font-size:16px" class="fu">🏅 Match Points per Matchday</h3>
+<div class="g2 fu">
+<div class="c">
+<h3 style="font-size:14px">Groups of 3 (D–H)</h3>
+<div style="margin-top:10px">
+<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px"><span>🥇 1st in group</span><strong style="color:var(--accent)">3 pts</strong></div>
+<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px"><span>🥈 2nd in group</span><strong>1 pt</strong></div>
+<div style="display:flex;justify-content:space-between;padding:7px 0;font-size:13px"><span>3rd in group</span><strong style="color:var(--text2)">0 pts</strong></div>
+</div>
+</div>
+<div class="c">
+<h3 style="font-size:14px">Groups of 4 (A–C)</h3>
+<div style="margin-top:10px">
+<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px"><span>🥇 1st in group</span><strong style="color:var(--accent)">3 pts</strong></div>
+<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px"><span>🥈 2nd in group</span><strong>2 pts</strong></div>
+<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px"><span>🥉 3rd in group</span><strong>1 pt</strong></div>
+<div style="display:flex;justify-content:space-between;padding:7px 0;font-size:13px"><span>4th in group</span><strong style="color:var(--text2)">0 pts</strong></div>
+</div>
+</div>
+</div>
+
+<details class="fu"><summary>Tiebreaker Rules</summary><div class="db"><ol><li><strong>1st:</strong> Total Match Points</li><li><strong>2nd:</strong> Total Scoring Points (accumulated WC scoring points)</li><li><strong>3rd:</strong> Head-to-Head (direct result between tied teams)</li><li><strong>4th:</strong> Phase 1 League Seed (league position)</li></ol><p style="margin-top:10px;color:var(--green)">✅ The <strong>top 2 from each group</strong> advance to the Knockout Stage → Round of 16</p></div></details>
+</div>
+
+<div class="divider"></div>
+
+<!-- KNOCKOUT -->
+<div class="sec" id="knockout">
+<div class="sb">Elimination</div>
+<h2>Knockout Stage &amp; Bracket</h2>
+<p class="sd">Single elimination. One 2-week match per round. Win or go home.</p>
+
+<div class="g4 fu">
+<div class="c" style="text-align:center"><div style="color:var(--accent);font-size:10px;font-weight:700">ROUND OF 16</div><div style="font-size:16px;font-weight:800;margin:5px 0">16 – 31 Jul</div><div style="font-size:11px;color:var(--text2)">16 → 8</div></div>
+<div class="c" style="text-align:center"><div style="color:var(--accent);font-size:10px;font-weight:700">QUARTER-FINALS</div><div style="font-size:16px;font-weight:800;margin:5px 0">1 – 15 Aug</div><div style="font-size:11px;color:var(--text2)">8 → 4</div></div>
+<div class="c" style="text-align:center"><div style="color:var(--accent);font-size:10px;font-weight:700">SEMI-FINALS</div><div style="font-size:16px;font-weight:800;margin:5px 0">16 – 24 Aug</div><div style="font-size:11px;color:var(--text2)">4 → 2</div></div>
+<div class="c" style="text-align:center;border:1px solid var(--accent)"><div style="color:var(--accent);font-size:10px;font-weight:700">🏆 GRAND FINAL</div><div style="font-size:16px;font-weight:800;margin:5px 0">25 – 31 Aug</div><div style="font-size:11px;color:var(--text2)">2 → 1</div></div>
+</div>
+
+<details class="fu" style="margin-top:14px"><summary>⏱️ Extra Time &amp; Seed Advantage</summary><div class="db"><ul><li><strong>Extra Time:</strong> If scores are tied after 2 weeks, an additional 3-day scoring window is opened. Higher scorer advances.</li><li><strong>Seed Advantage:</strong> If still tied after extra time, the site with the higher Phase 1 league seed advances.</li></ul></div></details>
+
+<h3 style="margin:28px 0 14px;font-size:16px" class="fu">🏟️ Full Knockout Bracket</h3>
+<p class="fu" style="color:var(--text2);font-size:12px;margin-bottom:14px">Group winners (1st) always face runners-up (2nd) from a different group. Same-group teams can't meet until Semi-Finals.</p>
+<div class="bk-wrap fu">
+<div class="bk">
+<div class="bk-r"><div class="rt">Round of 16</div><div class="bk-m">1A vs 2D</div><div class="bk-m">1B vs 2C</div><div class="bk-m">1C vs 2B</div><div class="bk-m">1D vs 2A</div><div style="height:12px"></div><div class="bk-m">1E vs 2H</div><div class="bk-m">1F vs 2G</div><div class="bk-m">1G vs 2F</div><div class="bk-m">1H vs 2E</div></div>
+<div class="bk-r"><div class="rt">Quarters</div><div class="bk-m" style="margin-top:16px">QF 1</div><div class="bk-m" style="margin-top:30px">QF 2</div><div style="height:24px"></div><div class="bk-m" style="margin-top:16px">QF 3</div><div class="bk-m" style="margin-top:30px">QF 4</div></div>
+<div class="bk-r"><div class="rt">Semis</div><div class="bk-m" style="margin-top:50px">SF 1</div><div style="height:60px"></div><div class="bk-m" style="margin-top:30px">SF 2</div></div>
+<div class="bk-r"><div class="rt">🏆 Final</div><div class="bk-m" style="margin-top:85px;border-color:var(--accent);color:var(--accent);font-size:13px">CHAMPION</div></div>
+</div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WC SCORING -->
+<div class="sec" id="wc-scoring">
+<div class="sb">WC Scoring</div>
+<h2>World Cup Scoring System</h2>
+<p class="sd">Progressive scoring across 2-week match periods. One topic per matchday in groups. More combined as you advance. The deeper you go, the harder it gets.</p>
+
+<h3 style="margin-bottom:14px;font-size:16px" class="fu">The 4 WC Pillars</h3>
+<div class="g4 fu">
+<div class="c" style="text-align:center;border-top:3px solid var(--blue);padding:18px"><div style="font-size:24px">📦</div><div style="font-size:13px;font-weight:700;margin:4px 0">B2B</div><div style="font-size:11px;color:var(--text2)">Productivity + Quality %</div><div style="font-size:16px;font-weight:800;color:var(--blue);margin-top:6px">0–100</div></div>
+<div class="c" style="text-align:center;border-top:3px solid var(--green);padding:18px"><div style="font-size:24px">⏱️</div><div style="font-size:13px;font-weight:700;margin:4px 0">Min Hours</div><div style="font-size:11px;color:var(--text2)">% compliance</div><div style="font-size:16px;font-weight:800;color:var(--green);margin-top:6px">0–100</div></div>
+<div class="c" style="text-align:center;border-top:3px solid var(--orange);padding:18px"><div style="font-size:24px">📊</div><div style="font-size:13px;font-weight:700;margin:4px 0">Scorecard</div><div style="font-size:11px;color:var(--text2)">Ranking position</div><div style="font-size:16px;font-weight:800;color:var(--orange);margin-top:6px">0–100</div></div>
+<div class="c" style="text-align:center;border-top:3px solid var(--purple);padding:18px"><div style="font-size:24px">⚽</div><div style="font-size:13px;font-weight:700;margin:4px 0">Engagement</div><div style="font-size:11px;color:var(--text2)">1 simple activity</div><div style="font-size:16px;font-weight:800;color:var(--purple);margin-top:6px">0 or 10</div></div>
+</div>
+
+<h3 style="margin:28px 0 12px;font-size:16px" class="fu">📈 Topic Progression by Round</h3>
+<div class="fu">
+<div style="font-size:11px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">⚽ Group Stage — 1 topic per matchday</div>
+<div class="g3">
+<div class="mc"><h4>Matchday 1</h4><div class="tags"><span class="tag t-b2b">📦 B2B</span><span class="tag t-eng">⚽ Eng</span></div><div class="mx">MAX: 110 pts</div></div>
+<div class="mc"><h4>Matchday 2</h4><div class="tags"><span class="tag t-sc">📊 Scorecard</span><span class="tag t-eng">⚽ Eng</span></div><div class="mx">MAX: 110 pts</div></div>
+<div class="mc"><h4>Matchday 3</h4><div class="tags"><span class="tag t-mh">⏱️ Min Hours</span><span class="tag t-eng">⚽ Eng</span></div><div class="mx">MAX: 110 pts</div></div>
+</div>
+</div>
+<div class="fu" style="margin-top:16px">
+<div style="font-size:11px;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">⚔️ Knockout — 2 topics combined</div>
+<div class="g3">
+<div class="mc"><h4>Round of 16</h4><div class="tags"><span class="tag t-b2b">📦 B2B</span><span class="tag t-sc">📊 Scorecard</span><span class="tag t-eng">⚽ Eng</span></div><div class="mx">MAX: 210 pts</div></div>
+<div class="mc"><h4>Quarter-Finals</h4><div class="tags"><span class="tag t-b2b">📦 B2B</span><span class="tag t-mh">⏱️ Min Hours</span><span class="tag t-eng">⚽ Eng</span></div><div class="mx">MAX: 210 pts</div></div>
+<div class="mc"><h4>Semi-Finals</h4><div class="tags"><span class="tag t-sc">📊 Scorecard</span><span class="tag t-mh">⏱️ Min Hours</span><span class="tag t-eng">⚽ Eng</span></div><div class="mx">MAX: 210 pts</div></div>
+</div>
+</div>
+<div class="fu" style="margin-top:16px">
+<div class="mc" style="border:1px solid var(--accent);background:rgba(240,192,64,0.04)">
+<h4>🏆 GRAND FINAL — All 3 topics</h4>
+<div class="tags"><span class="tag t-b2b">📦 B2B: 100</span><span class="tag t-sc">📊 Scorecard: 100</span><span class="tag t-mh">⏱️ Min Hours: 100</span><span class="tag t-eng">⚽ Eng: 10</span></div>
+<div class="mx" style="font-size:22px">MAXIMUM: 310 pts</div>
+<p style="font-size:11px;color:var(--text2);margin-top:4px">The champion must excel across every dimension</p>
+</div>
+</div>
+
+<h3 style="margin:28px 0 12px;font-size:16px" class="fu">⚽ Engagement Activities per Round</h3>
+<p class="fu" style="color:var(--text2);font-size:12px;margin-bottom:10px">One simple activity per matchday. Do it = 10 pts. Don't = 0.</p>
+<div class="fu">
+<div class="ei"><div class="er">MD1</div><div class="ea">📸 Team Photo</div><div class="ed">Team photo with matchday sign</div></div>
+<div class="ei"><div class="er">MD2</div><div class="ea">💬 Shout-out</div><div class="ed">Post recognizing a teammate's contribution</div></div>
+<div class="ei"><div class="er">MD3</div><div class="ea">🗳️ Prediction</div><div class="ed">Site predicts who qualifies from their group</div></div>
+<div class="ei"><div class="er">R16</div><div class="ea">📸 Team Photo</div><div class="ed">Photo celebrating qualification</div></div>
+<div class="ei"><div class="er">QF</div><div class="ea">💬 Shout-out</div><div class="ed">Recognize your site MVP so far</div></div>
+<div class="ei"><div class="er">SF</div><div class="ea">🗳️ Prediction</div><div class="ed">Predict the Grand Final matchup</div></div>
+<div class="ei" style="border-color:var(--accent)"><div class="er">🏆 Final</div><div class="ea">🎬 Mini Video</div><div class="ed">15-sec hype video from the team</div></div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ FULL SCORING SYSTEM ═══════════ -->
+<div class="sec" id="scoring">
+<div class="sb">Deep Dive</div>
+<h2>Full Season Scoring — 1,000 pts</h2>
+<p class="sd">Complete breakdown of all scoring categories and metrics across the season. Click each pillar to expand the full detail.</p>
+
+<!-- VISUAL BARS -->
+<div class="fu">
+<div class="sbar"><div class="sbar-h"><span class="sbar-l">📦 Operational Excellence</span><span class="sbar-v">450 pts</span></div><div class="sbar-t"><div class="sbar-f" style="width:45%;background:linear-gradient(90deg,var(--blue),var(--cyan))"></div></div></div>
+<div class="sbar"><div class="sbar-h"><span class="sbar-l">🤖 AI Adoption</span><span class="sbar-v">200 pts</span></div><div class="sbar-t"><div class="sbar-f" style="width:20%;background:linear-gradient(90deg,var(--purple),var(--blue))"></div></div></div>
+<div class="sbar"><div class="sbar-h"><span class="sbar-l">⚽ Engagement</span><span class="sbar-v">200 pts</span></div><div class="sbar-t"><div class="sbar-f" style="width:20%;background:linear-gradient(90deg,var(--accent),var(--orange))"></div></div></div>
+<div class="sbar"><div class="sbar-h"><span class="sbar-l">📊 Performance</span><span class="sbar-v">150 pts</span></div><div class="sbar-t"><div class="sbar-f" style="width:15%;background:linear-gradient(90deg,var(--green),#27ae60)"></div></div></div>
+</div>
+
+<!-- OPS EXCELLENCE -->
+<details class="fu">
+<summary>📦 Operational Excellence — 450 pts (45%)</summary>
+<div class="db">
+
+<h4>Actual Savings from B2B — 200 pts</h4>
+
+<div class="tier-header">Productivity B2B (150 pts)</div>
+<div class="tier"><span class="tv">150 pts</span><span class="tl2">Over OP2 commitment</span></div>
+<div class="tier"><span class="tv">100 pts</span><span class="tl2">At / within 80% of OP2</span></div>
+<div class="tier"><span class="tv">75 pts</span><span class="tl2">Within 60% of OP2</span></div>
+<div class="tier"><span class="tv">50 pts</span><span class="tl2">Within 40% of OP2</span></div>
+<div class="tier"><span class="tv">25 pts</span><span class="tl2">Within 20% of OP2</span></div>
+<div class="tier"><span class="tv">10 pts</span><span class="tl2">Within 10% of OP2</span></div>
+
+<div class="tier-header">Quality B2B (50 pts)</div>
+<div class="tier"><span class="tv">50 pts</span><span class="tl2">Over OP2 commitment</span></div>
+<div class="tier"><span class="tv">35 pts</span><span class="tl2">At / within 80% of OP2</span></div>
+<div class="tier"><span class="tv">25 pts</span><span class="tl2">Within 60% of OP2</span></div>
+<div class="tier"><span class="tv">15 pts</span><span class="tl2">Within 40% of OP2</span></div>
+<div class="tier"><span class="tv">8 pts</span><span class="tl2">Within 20% of OP2</span></div>
+<div class="tier"><span class="tv">3 pts</span><span class="tl2">Within 10% of OP2</span></div>
+
+<h4>Kaizen Events — 100 pts</h4>
+<div class="tier"><span class="tv">70 pts</span><span class="tl2">Target met (1 Big Kaizen + 2 Quick Wins)</span></div>
+<div class="tier"><span class="tv">50 pts</span><span class="tl2">1 Big Kaizen + 1 Quick Win completed</span></div>
+<div class="tier"><span class="tv">30 pts</span><span class="tl2">Only 1 Big Kaizen or only 2 Quick Wins</span></div>
+<div class="tier"><span class="tv">15 pts</span><span class="tl2">Only 1 Quick Win completed</span></div>
+<div class="tier"><span class="tv">0 pts</span><span class="tl2">No Kaizen activity</span></div>
+<p style="margin-top:8px"><em>Additional beyond target (up to 100 pts max): +15 pts per extra Big Kaizen, +10 pts per extra Quick Win</em></p>
+
+<h4>Min Hours % — 75 pts</h4>
+<p style="margin-bottom:6px">Based on number of months at 100% compliance over 8-month period:</p>
+<div class="tier"><span class="tv">75 pts</span><span class="tl2">100% maintained all 8 months</span></div>
+<div class="tier"><span class="tv">50 pts</span><span class="tl2">100% maintained 6–7 months</span></div>
+<div class="tier"><span class="tv">25 pts</span><span class="tl2">100% maintained 3–5 months</span></div>
+<div class="tier"><span class="tv">15 pts</span><span class="tl2">100% maintained 2 months</span></div>
+<div class="tier"><span class="tv">5 pts</span><span class="tl2">100% maintained 1 month</span></div>
+<div class="tier"><span class="tv">0 pts</span><span class="tl2">0 months at 100%</span></div>
+
+<h4>Best Practices — 75 pts</h4>
+<div class="tier-header">Shared (25 pts)</div>
+<div class="tier"><span class="tv">25 pts</span><span class="tl2">≥10 best practices shared</span></div>
+<div class="tier"><span class="tv">18 pts</span><span class="tl2">7–9 shared</span></div>
+<div class="tier"><span class="tv">12 pts</span><span class="tl2">4–6 shared</span></div>
+<div class="tier"><span class="tv">5 pts</span><span class="tl2">1–3 shared</span></div>
+
+<div class="tier-header">Adopted (50 pts)</div>
+<div class="tier"><span class="tv">50 pts</span><span class="tl2">≥8 best practices adopted</span></div>
+<div class="tier"><span class="tv">37 pts</span><span class="tl2">6–7 adopted</span></div>
+<div class="tier"><span class="tv">25 pts</span><span class="tl2">4–5 adopted</span></div>
+<div class="tier"><span class="tv">10 pts</span><span class="tl2">1–3 adopted</span></div>
+
+</div>
+</details>
+
+<!-- AI ADOPTION -->
+<details class="fu">
+<summary>🤖 AI Adoption — 200 pts (20%)</summary>
+<div class="db">
+
+<h4>AI Training Compliance — 100 pts</h4>
+<div class="tier"><span class="tv">100 pts</span><span class="tl2">≥95% compliance</span></div>
+<div class="tier"><span class="tv">75 pts</span><span class="tl2">85–94%</span></div>
+<div class="tier"><span class="tv">50 pts</span><span class="tl2">75–84%</span></div>
+<div class="tier"><span class="tv">25 pts</span><span class="tl2">60–74%</span></div>
+<div class="tier"><span class="tv">10 pts</span><span class="tl2">40–59%</span></div>
+<div class="tier"><span class="tv">0 pts</span><span class="tl2">&lt;40%</span></div>
+
+<h4>QuickSuite Adoption — 50 pts</h4>
+<div class="tier"><span class="tv">50 pts</span><span class="tl2">≥90% active adoption</span></div>
+<div class="tier"><span class="tv">37 pts</span><span class="tl2">80–89%</span></div>
+<div class="tier"><span class="tv">25 pts</span><span class="tl2">65–79%</span></div>
+<div class="tier"><span class="tv">12 pts</span><span class="tl2">50–64%</span></div>
+<div class="tier"><span class="tv">5 pts</span><span class="tl2">30–49%</span></div>
+<div class="tier"><span class="tv">0 pts</span><span class="tl2">&lt;30%</span></div>
+
+<h4>AI Best Practices — 50 pts</h4>
+<div class="tier"><span class="tv">50 pts</span><span class="tl2">≥4 submissions</span></div>
+<div class="tier"><span class="tv">20 pts</span><span class="tl2">2–3 submissions</span></div>
+<div class="tier"><span class="tv">0 pts</span><span class="tl2">No submissions</span></div>
+
+</div>
+</details>
+
+<!-- PERFORMANCE -->
+<details class="fu">
+<summary>📊 Performance (WW Scorecard) — 150 pts (15%)</summary>
+<div class="db">
+
+<h4>March to September — 15 pts/month (7 months = 105 pts)</h4>
+<div class="tier"><span class="tv">15 pts</span><span class="tl2">Within WW Top 10</span></div>
+<div class="tier"><span class="tv">8 pts</span><span class="tl2">Not WW Top 10 but within EU Top 10</span></div>
+<div class="tier"><span class="tv">5 pts</span><span class="tl2">Not Top 10 but improved vs previous month</span></div>
+<div class="tier"><span class="tv">0 pts</span><span class="tl2">None of the above</span></div>
+
+<h4>October Power Up — 45 pts (3× multiplier)</h4>
+<div class="tier"><span class="tv">45 pts</span><span class="tl2">Within WW Top 10</span></div>
+<div class="tier"><span class="tv">23 pts</span><span class="tl2">Not WW Top 10 but within EU Top 10</span></div>
+<div class="tier"><span class="tv">15 pts</span><span class="tl2">Not Top 10 but improved vs previous month</span></div>
+<div class="tier"><span class="tv">0 pts</span><span class="tl2">None of the above</span></div>
+
+<p style="margin-top:10px"><em>October is worth 3× a normal month — peak season performance matters most.</em></p>
+
+</div>
+</details>
+
+<!-- ENGAGEMENT -->
+<details class="fu">
+<summary>⚽ Engagement — 200 pts (20%)</summary>
+<div class="db">
+
+<h4>Event Participation — 125 pts</h4>
+<div class="tier"><span class="tv">20 pts</span><span class="tl2">Q1 Capstone</span></div>
+<div class="tier"><span class="tv">30 pts</span><span class="tl2">Q1 Launch Activities</span></div>
+<div class="tier"><span class="tv">30 pts</span><span class="tl2">Q2 Fun Fair</span></div>
+<div class="tier"><span class="tv">30 pts</span><span class="tl2">Q3 Innovation Competition</span></div>
+<div class="tier"><span class="tv">15 pts</span><span class="tl2">Q4 Pre-peak All STARS Gala</span></div>
+
+<h4>Individual Recognition — 75 pts</h4>
+<p>Success Stories and Nominations:</p>
+<div class="tier"><span class="tv">75 pts</span><span class="tl2">Consistent submissions</span></div>
+<div class="tier"><span class="tv">40 pts</span><span class="tl2">Partial submissions</span></div>
+
+</div>
+</details>
+
+<!-- SPE ADJUSTMENT -->
+<details class="fu">
+<summary>⚖️ SPE Coverage Adjustment</summary>
+<div class="db">
+<p>A multiplier applied <strong>only to SPE-dependent topics</strong> (e.g. Kaizen Events). Topics completable by Ops alone or with remote SPE support (AI, Scorecard, BPs, B2B) are <strong>not adjusted</strong>.</p>
+<div style="margin-top:10px">
+<div class="tier"><span class="tv">×1.3</span><span class="tl2">Double coverage — SPE shared from another site</span></div>
+<div class="tier"><span class="tv">×1.5</span><span class="tl2">Late hire — SPE onboarded mid-year</span></div>
+<div class="tier"><span class="tv">×2.0</span><span class="tl2">No dedicated SPE — remote support only</span></div>
+</div>
+<p style="margin-top:10px"><em>Example: Site with no SPE earns 40 pts in Kaizen → Adjusted = 40 × 2.0 = 80 pts. Same site earns 80 pts in AI → stays 80 pts (not SPE-dependent).</em></p>
+</div>
+</details>
+</div>
+
+<div class="divider"></div>
+
+<!-- BONUS POINTS -->
+<div class="sec" id="bonus">
+<div class="sb">The Impact</div>
+<h2>World Cup Bonus Points</h2>
+<p class="sd">Your World Cup finish earns bonus points added directly to your Phase 3 league total. A deep run can reshape the entire league standings.</p>
+
+<div class="flow fu" style="font-size:11px">
+<div class="fs">🏆 WC FINISH</div><div class="fa">→</div><div class="fs">🎁 BONUS PTS</div><div class="fa">→</div><div class="fs">📊 LEAGUE TABLE</div><div class="fa">→</div><div class="fs hl">👑 CHAMPION</div>
+</div>
+
+<div class="fu" style="margin-top:20px">
+<div class="br" style="border-color:var(--accent)"><div class="bi">🏆</div><div class="bl">Champion</div><div class="bp">+150</div></div>
+<div class="br"><div class="bi">🥈</div><div class="bl">Finalist</div><div class="bp">+100</div></div>
+<div class="br"><div class="bi">🥉</div><div class="bl">Semi-Finals <span style="color:var(--text2);font-weight:400">(×2 teams)</span></div><div class="bp">+70</div></div>
+<div class="br"><div class="bi">⚔️</div><div class="bl">Quarter-Finals <span style="color:var(--text2);font-weight:400">(×4 teams)</span></div><div class="bp">+45</div></div>
+<div class="br"><div class="bi">⚽</div><div class="bl">Round of 16 <span style="color:var(--text2);font-weight:400">(×8 teams)</span></div><div class="bp">+25</div></div>
+<div class="br"><div class="bi">📋</div><div class="bl">Group Stage exit <span style="color:var(--text2);font-weight:400">(×8 teams)</span></div><div class="bp">+10</div></div>
+</div>
+
+<div class="g2 fu" style="margin-top:20px">
+<div class="c" style="border-left:3px solid var(--accent)"><h3 style="font-size:15px">Maximum Gap: 140 pts</h3><p>Between a WC Champion (+150) and a group stage exit (+10). Significant but <strong style="color:var(--text)">not insurmountable</strong> — two strong league months in Phase 3 can close it.</p></div>
+<div class="callout warn" style="margin:0"><strong>⚠️ No qualification = 0 bonus.</strong> Sites below 100 pts in Phase 1 receive 0 bonus points in Phase 3. They continue competing in the league but without the World Cup advantage — making qualification all the more important.</div>
+</div>
+
+<div class="ex fu" style="margin-top:20px">
+<h4>📊 Example: How Bonus Points Reshape the Standings</h4>
+<div class="row">
+<div class="box"><div class="name" style="color:var(--blue)">SITE A</div><div class="line">Phase 1: 320 pts</div><div class="line">WC Bonus: +10 (group stage exit)</div><div class="total" style="color:var(--blue)">= 330 pts entering Phase 3</div></div>
+<div class="box"><div class="name" style="color:var(--accent)">SITE B</div><div class="line">Phase 1: 280 pts</div><div class="line">WC Bonus: +150 (World Cup Champion 🏆)</div><div class="total" style="color:var(--accent)">= 430 pts entering Phase 3</div></div>
+</div>
+<p style="font-size:12px;color:var(--text2);margin-top:12px;line-height:1.6">Site B was behind in the league but their World Cup run flipped the standings. Site A now needs to outperform by 100 pts over Sep–Oct to reclaim the lead. Difficult — but absolutely possible.</p>
+</div>
+
+<div class="callout fu" style="margin-top:20px"><strong>🎯 By design:</strong> The World Cup should matter, but the league must remain competitive until the very last month. That's why the gap is significant but not definitive.</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<div style="font-size:18px;margin-bottom:8px">⭐ ALL STARS League 2026</div>
+<p>Intro, League Structure &amp; Scoring — Quick Reference Guide</p>
+<p style="margin-top:6px;opacity:.4">Source: Full_ALL_STARS_League.docx</p>
+</footer>
+
+<!-- DATA SOURCES -->
+
+
+<!-- CONTROLS -->
+<div id="viz-controls" style="position:fixed;top:15px;right:15px;z-index:9999;display:flex;gap:8px">
+<button id="export-html-btn" style="background: rgb(39, 174, 96); border: 2px solid rgb(39, 174, 96); color: white; padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px; transition: 0.2s; transform: translateY(-2px);" title="Export as HTML" onmouseover="this.style.background='#27AE60';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#2ECC71';this.style.transform='translateY(0)'">💾 Export</button>
+<button id="fs-btn" style="background:white;border:2px solid #4A90E2;color:#4A90E2;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:all 0.2s" title="Fullscreen" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">⛶</button>
+</div>
+
+<script>
+window.addEventListener('scroll',function(){var h=document.documentElement;var p=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('pbar').style.width=p+'%';});
+var secs=document.querySelectorAll('.sec,.hero');var links=document.querySelectorAll('nav .links a');
+window.addEventListener('scroll',function(){var sp=window.scrollY+80;secs.forEach(function(s){if(s.offsetTop<=sp&&s.offsetTop+s.offsetHeight>sp){var id=s.getAttribute('id');links.forEach(function(l){l.classList.remove('active');if(l.getAttribute('href')==='#'+id||l.getAttribute('href')==='#top'&&id==='top')l.classList.add('active');});}});});
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.fu').forEach(function(el){obs.observe(el);});
+(function(){
+document.getElementById('export-html-btn').addEventListener('click',function(){try{var c=document.documentElement.cloneNode(true);var a=c.querySelector('details[style*="FFF3CD"]');if(a)a.remove();var h='<!DOCTYPE html>\n'+c.outerHTML;var b=new Blob([h],{type:'text/html;charset=utf-8'});var l=document.createElement('a');l.href=URL.createObjectURL(b);l.download='ALL_STARS_2026_Complete_Guide.html';document.body.appendChild(l);l.click();document.body.removeChild(l);URL.revokeObjectURL(l.href);var btn=this;btn.innerHTML='✓ Saved!';setTimeout(function(){btn.innerHTML='💾 Export';},2000);}catch(err){alert('Export failed: '+err.message);}});
+document.getElementById('fs-btn').addEventListener('click',function(){if(!document.fullscreenElement){document.documentElement.requestFullscreen().catch(function(e){console.error(e);});}else{document.exitFullscreen();}});
+document.addEventListener('fullscreenchange',function(){document.getElementById('fs-btn').textContent=document.fullscreenElement?'✕':'⛶';});
+})();
+</script>
+
+</body></html>
